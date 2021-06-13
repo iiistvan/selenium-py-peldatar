@@ -27,7 +27,7 @@ jobs:
         if [ -f ./testproject/requirements.txt ]; then pip install -r ./testproject/requirements.txt; fi
     - name: Test with pytest
       run: |
-        pytest ./testproject --alluredir=allure-result
+        pytest ./testproject/test_mymath.py --alluredir=allure-result
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
       if: always()
