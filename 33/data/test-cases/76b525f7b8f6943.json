@@ -1,12 +1,12 @@
 {
-  "uid" : "c3f07e2ddfa5753a",
-  "name" : "test_add_string__expect_exception",
-  "fullName" : "testproject.test_mymath#test_add_string__expect_exception",
-  "historyId" : "0e93b819cc2e8121f7281dc8e4eaaf78",
+  "uid" : "76b525f7b8f6943",
+  "name" : "test_add_negative",
+  "fullName" : "testproject.test_mymath#test_add_negative",
+  "historyId" : "753cdf21aa3257d3e2249d83346a13e6",
   "time" : {
-    "start" : 1624434892518,
-    "stop" : 1624434892519,
-    "duration" : 1
+    "start" : 1624437778346,
+    "stop" : 1624437778346,
+    "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
@@ -21,10 +21,10 @@
     "value" : "test_mymath"
   }, {
     "name" : "host",
-    "value" : "fv-az47-613"
+    "value" : "fv-az39-686"
   }, {
     "name" : "thread",
-    "value" : "2744-MainThread"
+    "value" : "2920-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -48,6 +48,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "c3f07e2ddfa5753a.json",
+  "source" : "76b525f7b8f6943.json",
   "parameterValues" : [ ]
 }
