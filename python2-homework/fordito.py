@@ -12,7 +12,8 @@ while szam:
         assert szam > 0
         szamok.append(szam)
     except:
-        print("Pozitív egész számot várok!")
+        if szam != 0:
+            print("Pozitív egész számot várok!")
 
 # fordított sorrendű kiiratás
 print(szamok[::-1])
