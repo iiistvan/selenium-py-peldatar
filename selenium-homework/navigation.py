@@ -9,11 +9,17 @@ driver.get("http://localhost:9999/general.html")
 
 
 def ahref_list():  # a linkek listába gyűjtése
-    a_list = driver.find_elements_by_xpath("//a[@href]")
-    print("A kigyűjtött", len(a_list), "db link: ")
+    an_list = blank_list = []
+    blank_list = driver.find_elements_by_xpath('//a[@href][@target="_blank"]')
+    a_list = driver.find_elements_by_xpath('//a[@href]')
+
+    print("A kigyűjtött", len(a_list)-len(blank_list), "db link: ")
     for elem in a_list:
-        pass
+        if elem in blank_list:
+            continue
+        an_list.append(elem)
         print(elem.get_attribute("href"))
+    a_list = an_list
     return a_list
 
 
