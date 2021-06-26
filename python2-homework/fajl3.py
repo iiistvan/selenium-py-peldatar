@@ -1,4 +1,4 @@
-# adat.txt beolvasása és tárolása listába, majd kiírása egy sorba
+# adat.txt beolvasása és tárolása listába, majd kiírása egy sorként, egy másik fájlba
 
 with open("adat.txt", "r") as file1:
     szoveg = file1.read().splitlines()
