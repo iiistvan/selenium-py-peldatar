@@ -1,9 +1,8 @@
 # gyakorlás modulokra
 
+globalis_valtozo = 'Kitartás!'
+
+
 def modulok():
-    valtozo = 'Szia Tamás!'
-
-# def kiir(v):
-#    print(v)
-
-# kiir(valtozo)
+    lokalis_valtozo = 'Szia Tamás!'
+    return (lokalis_valtozo)
