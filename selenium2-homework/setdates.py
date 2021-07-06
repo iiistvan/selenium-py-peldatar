@@ -26,7 +26,6 @@ driver.find_element_by_id('example-input-week').send_keys(datedata.strftime('%W%
 
 driver.find_element_by_id('example-input-time').send_keys(12, 25)
 
-
 time.sleep(10)
 
 driver.close()
