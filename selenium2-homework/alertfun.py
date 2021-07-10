@@ -70,4 +70,4 @@ time.sleep(1)
 alert.accept()
 time.sleep(1)
 
-# driver.close()
+driver.close()
