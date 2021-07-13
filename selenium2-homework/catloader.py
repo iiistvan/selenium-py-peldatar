@@ -14,7 +14,7 @@ import pprint
 from pathlib import Path
 import os
 import errno
-import requests
+import requests # by Tamas konzi
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
