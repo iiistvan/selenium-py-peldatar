@@ -14,6 +14,7 @@ import pprint
 from pathlib import Path
 import os
 import errno
+import requests
 
 
 def mkdir_p(path):
@@ -31,11 +32,14 @@ def image_data():
         element = driver.find_element_by_xpath(f"/html/body/div[1]/div[{i}][@class ='image']")
         data_row = {}
         data_row['sorszam'] = i
-        catid = element.find_element_by_tag_name("p").text
-        catid = catid.replace("Cat id: ", "")
-        data_row['cat_id'] = catid
-        with open(f"{catpath}\\{data_row['sorszam']}_{data_row['cat_id']}.jpg", "w") as filecat:
-            filecat.write(element.find_element_by_tag_name("img").get_attribute("src"))
+        catId = element.find_element_by_tag_name("p").text
+        catId = catId.replace("Cat id: ", "")
+        data_row['cat_id'] = catId
+        catUrl = element.find_element_by_tag_name("img").get_attribute("src")
+        catReq = requests.get(catUrl)
+        if catReq.status_code == 200:
+            with open(f"{catpath}\\{data_row['sorszam']}_{data_row['cat_id']}.jpg", "wb") as filecat:
+                filecat.write(catReq.content)
         catlist.append(data_row)
 
 
