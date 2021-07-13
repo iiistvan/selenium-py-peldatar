@@ -14,6 +14,7 @@ import pprint
 from pathlib import Path
 import os
 import errno
+import requests
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -40,11 +41,14 @@ def image_data():
     for j in images:
         data_row = {}
         data_row['sorszam'] = i + 1
-        catid = j.find_element_by_tag_name("p").text
-        catid = catid.replace("Cat id: ", "")
-        data_row['cat_id'] = catid
-        with open(f"{catpath}\\{data_row['sorszam']}_{data_row['cat_id']}.jpg", "w") as filecat:
-            filecat.write(j.find_element_by_tag_name("img").get_attribute("src"))
+        catId = j.find_element_by_tag_name("p").text
+        catId = catId.replace("Cat id: ", "")
+        data_row['cat_id'] = catId
+        catUrl = j.find_element_by_tag_name("img").get_attribute("src")
+        catReq = requests.get(catUrl)
+        if catReq.status_code == 200:
+            with open(f"{catpath}\\{data_row['sorszam']}_{data_row['cat_id']}.jpg", "wb") as filecat:
+                filecat.write(catReq.content)
         catlist.append(data_row)
         i += 1
     # print(len(catlist))
