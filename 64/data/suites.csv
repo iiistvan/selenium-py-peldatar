@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jul 14 17:38:33 GMT 2021","Wed Jul 14 17:38:33 GMT 2021","0","testproject","test_mymath","","","","test_add_negative",""
+"passed","Wed Jul 14 17:38:33 GMT 2021","Wed Jul 14 17:38:33 GMT 2021","0","testproject","test_mymath","","","","test_add_positive",""
+"passed","Wed Jul 14 17:38:33 GMT 2021","Wed Jul 14 17:38:33 GMT 2021","0","testproject","test_mymath","","","","test_add_string__expect_exception",""
+"passed","Wed Jul 14 17:38:33 GMT 2021","Wed Jul 14 17:38:33 GMT 2021","0","testproject","test_mymath","","","","test_add_zero",""
