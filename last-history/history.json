@@ -9,12 +9,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "3965fc18870b27d",
-      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/67//#testresult/3965fc18870b27d",
+      "uid" : "a2a6766f80c4f4ea",
+      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/68//#testresult/a2a6766f80c4f4ea",
       "status" : "passed",
       "time" : {
-        "start" : 1626459882922,
-        "stop" : 1626459882922,
+        "start" : 1626460063948,
+        "stop" : 1626460063948,
         "duration" : 0
       }
     } ]
@@ -29,13 +29,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "bf623828faaef71e",
-      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/67//#testresult/bf623828faaef71e",
+      "uid" : "ab12c2afafa4e173",
+      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/68//#testresult/ab12c2afafa4e173",
       "status" : "passed",
       "time" : {
-        "start" : 1626459882920,
-        "stop" : 1626459882920,
-        "duration" : 0
+        "start" : 1626460063946,
+        "stop" : 1626460063947,
+        "duration" : 1
       }
     } ]
   },
@@ -49,12 +49,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9a430fb7f6ccd22c",
-      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/67//#testresult/9a430fb7f6ccd22c",
+      "uid" : "ef9e197aef76e",
+      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/68//#testresult/ef9e197aef76e",
       "status" : "passed",
       "time" : {
-        "start" : 1626459882919,
-        "stop" : 1626459882919,
+        "start" : 1626460063945,
+        "stop" : 1626460063945,
         "duration" : 0
       }
     } ]
@@ -69,12 +69,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9f797ecca92f8d65",
-      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/67//#testresult/9f797ecca92f8d65",
+      "uid" : "4e8f23be163821b3",
+      "reportUrl" : "https://iiistvan.github.io/selenium-py-peldatar/68//#testresult/4e8f23be163821b3",
       "status" : "passed",
       "time" : {
-        "start" : 1626459882908,
-        "stop" : 1626459882908,
+        "start" : 1626460063937,
+        "stop" : 1626460063937,
         "duration" : 0
       }
     } ]
