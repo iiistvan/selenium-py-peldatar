@@ -42,7 +42,7 @@ time.sleep(3)
 driver.close()
 
 
-# 2. verzió függvényesítve (még nem megy!!!)
+# 2. verzió függvényesítés (még nem megy!!!)
 # data_list = [[2021, 6, 5], [2012, 5, 5, 5, 5, 5, 555000], [2000, 5, 12, 12, 1], [1995, 12, 1], [2015, 12, 31],
 #              [2021, 1, 1, 0, 25]]
 # data_form = ['%m%d%Y', '%Y.%m.%d %H:%M:%S:%f', '%mt%dt%Y\t%H%M%p', '%B\t%Y', '%W%Y', '%H%M%p']
