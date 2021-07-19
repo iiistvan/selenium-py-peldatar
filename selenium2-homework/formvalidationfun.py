@@ -101,6 +101,7 @@ def input_validator(input_elements):
         i.send_keys(input_data_list[e][-1])
         time.sleep(ts)
         assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]').is_enabled()
+        # assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]/../div[contains(@class, "form-field-valid")]').is_enabled()
         time.sleep(ts)
 
 # input text mezők kigyűjtése
