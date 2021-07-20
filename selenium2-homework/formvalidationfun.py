@@ -12,10 +12,39 @@ import sys
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("http://localhost:9999/simplevalidation.html")
 
+# kitöltetlen állapot előidézése
 action = ActionChains(driver)
-action = action.send_keys(Keys.TAB)
+action = action.send_keys(Keys.TAB * 18)
 action.perform()
 time.sleep(1)
+
+# Hibaüzenetek kitöltetlen esetben
+err_list = ["", "Please enter an e-mail", "This field can't be empty", "Please complete Desired Password",
+            "Please select a card type", "Please enter a credit card number (no spaces)",
+            "Select a month", "Select a year", "Please select one", "Please agree to both to continue"]
+
+# vizsgálat kitöltetlen esetben
+valid_fields = driver.find_elements_by_xpath('//div[@class="validate-field-error-message"]')
+for e, vf in enumerate(valid_fields):
+    if e == 0:
+        assert vf.text == err_list[1]
+    elif e in [1, 3, 4, 6, 8, 11, 14]:
+        assert vf.text == err_list[2]
+    elif e == 2:
+        assert vf.text == err_list[3]
+    elif e == 9:
+        assert vf.text == err_list[4]
+    elif e == 10:
+        assert vf.text == err_list[5]
+    elif e == 12:
+        assert vf.text == err_list[6]
+    elif e == 13:
+        assert vf.text == err_list[7]
+    elif e == 15:
+        assert vf.text == err_list[8]
+    elif e == 16:
+        assert vf.text == err_list[9]
+
 
 # mező hibaüzenetek, hozzá tesztadatok
 
@@ -100,9 +129,9 @@ def input_validator(input_elements):
         time.sleep(ts)
         i.send_keys(input_data_list[e][-1])
         time.sleep(ts)
-        assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]').is_enabled()
-        # assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]/../div[contains(@class, "form-field-valid")]').is_enabled()
+        assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]/..').find_element_by_class_name("form-field-valid")
         time.sleep(ts)
+
 
 # input text mezők kigyűjtése
 x = driver.find_elements_by_xpath('//div[contains(@class, "form-group")]/div/input')
