@@ -23,28 +23,15 @@ err_list = ["", "Please enter an e-mail", "This field can't be empty", "Please c
             "Please select a card type", "Please enter a credit card number (no spaces)",
             "Select a month", "Select a year", "Please select one", "Please agree to both to continue"]
 
+# hibaüzenet - mező összerendelés
+input_err_assert = {0: 1, 1: 2, 2: 3, 3: 2, 4: 2, 6: 2, 8: 2, 9: 4, 10: 5, 11: 2, 12: 6, 13: 7, 14: 2, 15: 8, 16: 9}
+
 # vizsgálat kitöltetlen esetben
 valid_fields = driver.find_elements_by_xpath('//div[@class="validate-field-error-message"]')
 for e, vf in enumerate(valid_fields):
-    if e == 0:
-        assert vf.text == err_list[1]
-    elif e in [1, 3, 4, 6, 8, 11, 14]:
-        assert vf.text == err_list[2]
-    elif e == 2:
-        assert vf.text == err_list[3]
-    elif e == 9:
-        assert vf.text == err_list[4]
-    elif e == 10:
-        assert vf.text == err_list[5]
-    elif e == 12:
-        assert vf.text == err_list[6]
-    elif e == 13:
-        assert vf.text == err_list[7]
-    elif e == 15:
-        assert vf.text == err_list[8]
-    elif e == 16:
-        assert vf.text == err_list[9]
-
+    if e in [5, 7]:
+        continue
+    assert vf.text == err_list[input_err_assert[e]]
 
 # mező hibaüzenetek, hozzá tesztadatok
 
@@ -115,7 +102,6 @@ ts = 2
 
 
 def input_validator(input_elements):
-    # input_elements = driver.find_elements_by_xpath('//div[@class="form-group"]/div/input')
     for e, i in enumerate(input_elements):
         for n in range(len(input_err_list[e])):
             i.clear()
@@ -129,7 +115,8 @@ def input_validator(input_elements):
         time.sleep(ts)
         i.send_keys(input_data_list[e][-1])
         time.sleep(ts)
-        assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]/..').find_element_by_class_name("form-field-valid")
+        assert driver.find_element_by_xpath('//label[@for= "' + input_for_list[e] + '"]/..').find_element_by_class_name(
+            "form-field-valid")
         time.sleep(ts)
 
 
